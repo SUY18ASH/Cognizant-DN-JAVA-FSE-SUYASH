@@ -1,0 +1,9 @@
+In this hands-on exercise, I used Spring's XML-based configuration to define and manage a simple Country bean. To begin with, I configured the country.xml file using the <bean> tag. The bean tag is used in Spring to declare a bean definition, which represents an object that will be managed by the Spring container. The id attribute in the bean tag uniquely identifies the bean in the container so it can be retrieved later using that name. The class attribute specifies the fully qualified name of the class that this bean should be an instance of-in this case, com.cognizant.springlearn.Country.
+
+Inside the <bean>, I used <property> tags to inject values into the bean's fields. The name attribute inside the property tag refers to the setter method (e.g., setCode() or setName()), while the value attribute is used to pass the actual value to the corresponding field. For instance, I set the code as "IN" and the name as "India" in the configuration.
+
+To load this configuration in my Java application, I used the ApplicationContext interface provided by Spring, which is the central interface to access the Spring container. Specifically, I used ClassPathXmlApplicationContext, a concrete implementation of ApplicationContext that loads the bean definitions from an XML file present in the classpath.
+
+When I call context.getBean("country", Country.class), Spring performs several tasks internally. First, it looks up the bean with the ID "country" in the loaded XML configuration. Then, it creates an instance of the Country class (if it hasn't already), sets its properties using the values defined in the XML (via the setter methods), and finally returns the fully-initialized bean. This process also triggers any logging or logic written inside the constructor and the setters/getters.
+
+This exercise helped me understand how Spring's IoC container works with XML configuration and how beans are instantiated, wired, and retrieved through ApplicationContext.
