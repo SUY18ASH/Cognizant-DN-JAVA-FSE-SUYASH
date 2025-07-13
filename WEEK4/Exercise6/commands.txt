@@ -1,0 +1,5 @@
+curl -s -u user:pwd http://localhost:8083/authenticate
+
+token: {
+    "token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyIiwiaWF0IjoxNzUyNDMzNjAxLCJleHAiOjE3NTI0MzcyMDF9.HECEnU6ZGUga9wwD_X5xuDRc3NTqA-SYVWWir7hQDiI"
+}
